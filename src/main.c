@@ -161,9 +161,10 @@ int main()
 		printf("\nosh>");
 		fflush(stdout);
 
-		char *buffer;
+		// char *buffer;
+		char buffer[MAX_BUFSIZE];
 		size_t bufsize = MAX_BUFSIZE;
-		buffer = (char*)malloc(MAX_BUFSIZE * sizeof(char));
+		// buffer = (char*)malloc(MAX_BUFSIZE * sizeof(char));
 		if (buffer == NULL){
 			perror("Unable to allocate buffer");
 			free(buffer);
@@ -171,10 +172,11 @@ int main()
 		}
 		fgets(buffer, MAX_BUFSIZE, stdin);
 		if ((bufsize < 0) || (bufsize && buffer[0] == 'q')){
-			free(buffer);
+			// free(buffer);
 			break;
 		}
-		buffer = trimwhitespace(buffer);
+		// buffer = trimwhitespace(buffer);
+		strcpy(buffer, trimwhitespace(buffer));
 
 		if (strlen(buffer) == 0){
 			continue;
@@ -186,10 +188,10 @@ int main()
 				continue;
 			}
 
-			if (buffer){
-				free(buffer);				
-			}
-			buffer = (char*)malloc(sizeof(prev_buffer));
+			// if (buffer){
+			// 	free(buffer);				
+			// }
+			// buffer = (char*)malloc(sizeof(prev_buffer));
 			strcpy(buffer, prev_buffer);
 
 			printf("%s\n", prev_buffer);
@@ -208,8 +210,12 @@ int main()
 		// }
 
 		exec_pipe(commands, num_command);
+		// printf("%s\n", buffer);
 
-		free(buffer);
+		// if (buffer){
+		// 	free(buffer);
+		// }
+		// printf("free\n");
 	}
 	return 0;
 }
