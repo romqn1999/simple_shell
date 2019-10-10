@@ -37,6 +37,6 @@ simple shell run on unix, write in C
     $ ./build/simple_shell
     ```
 ### Note
-  On Window, install Cygwin to build. Cygwin is:
+  On Window, install Cygwin to build application. Cygwin is:
   - a large collection of GNU and Open Source tools which provide functionality similar to a Linux distribution on Windows.
   - a DLL (cygwin1.dll) which provides substantial POSIX API functionality.
