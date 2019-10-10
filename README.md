@@ -2,7 +2,7 @@
 simple shell run on unix, write in C
 
 ### Prerequisites
-  - Complier for `C`, I use `gcc`
+  - Compiler for `C`, I use `gcc`
     ```console
     $ gcc --version
     gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0
